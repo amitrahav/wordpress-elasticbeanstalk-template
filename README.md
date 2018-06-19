@@ -24,9 +24,7 @@ git clone   https://github.com/amitrahav/wordpress-elasticbeanstalk-template.git
 eb init
 ```
 
-You Should add php-fpm docker url to Dockerrun.aws.json (line 24). 
-
-I Use [Wp-Engine](https://github.com/amitrahav/WP-Slim-Container) as php-fpm container.
+You Should add php-fpm docker url to Dockerrun.aws.json (line 24). I Use [Wp-Engine](https://github.com/amitrahav/WP-Slim-Container) as php-fpm container.
 
 ### Folders Structure
 
@@ -59,7 +57,15 @@ composer create-project roots/bedrock ./
 
 ## How Does It work
 
-1. dockerBuild 
+1. dockerBuild install dependencies and create Benastalk ready Artifact.
+
+2. Nginx and PHP-FPM configuration (from config/ folder) being copied to the containers.
+
+3. Beanstalk pull nginx generic AWS image, and PHP-FPM image (you should define at Dockerrun.aws.json).
+
+4. Nginx and Php-app share upload directory with containers host.
+
+5. Logs are shared and uploaded to CloudWatch stream
 
 ## Logs
 
@@ -87,3 +93,7 @@ Cloudwatch integration can only work with [this](https://docs.aws.amazon.com/ela
   ]
 }
 ```
+
+## Work in progress
+
+1. Adding TimeZone configuration to hosting EC2 and containers.
