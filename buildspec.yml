@@ -1,0 +1,13 @@
+version: 0.1
+phases:
+  build:
+    commands:
+      - echo Compose started on `date`
+      - cd ./site && composer install --no-dev && composer update --no-dev
+artifacts:
+  files:
+    - '**/Dockerrun.aws.json'
+    - '**/site/**/*'
+    - '**/config/**/*'
+    - '**/.ebextensions/**/*'
+    - '**/auth.json'

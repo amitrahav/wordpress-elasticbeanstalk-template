@@ -1,0 +1,46 @@
+# Application
+site/web/app/plugins/*
+!site/web/app/plugins/.gitkeep
+!site/web/app/plugins/the-noal-plugin
+!site/web/app/plugins/noal-import-data
+site/web/app/upgrade
+site/web/app/languages
+site/web/app/cache
+site/web/app/w3c-config
+site/web/app/advanced-cache.php
+site/web/app/uploads/*
+!site/web/app/uploads/.gitkeep
+site/web/app/mu-plugins/debug/**
+
+# WordPress
+site/web/wp/*
+site/web/.htaccess
+
+# WP-CLI
+site/db-sync
+site/*.sql
+db-sync
+*.sql
+
+# Dotenv
+site/.env
+!site/.env.example
+
+# Vendor (e.g. Composer)
+site/vendor/*
+!site/vendor/.gitkeep
+
+# Node Package Manager
+site/node_modules
+
+# Vagrant
+bin
+.vagrant
+
+#Workspaces
+.idea
+auth.json
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
